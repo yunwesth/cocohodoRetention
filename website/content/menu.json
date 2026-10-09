@@ -1,0 +1,183 @@
+{
+  "source": "https://njcocohodo.com/menu/",
+  "lastReviewed": "2026-10-09",
+  "pricesConfirmed": false,
+  "categories": [
+    {
+      "id": "walnut-pastries",
+      "name": "Walnut pastries",
+      "shortName": "Walnut pastries",
+      "koreanName": "호도과자",
+      "photo": "walnut-pastries",
+      "description": "A little Korean tradition, ready to take along.",
+      "items": [
+        {
+          "name": "Walnut pastry bags",
+          "description": "Choose a bag to take home or share."
+        },
+        {
+          "name": "Small, medium & large bags",
+          "description": "Ask the shop about the available sizes."
+        }
+      ]
+    },
+    {
+      "id": "gift-boxes",
+      "name": "Gift boxes",
+      "shortName": "Gift boxes",
+      "koreanName": "",
+      "photo": "korean-walnut-pastry",
+      "description": "A little something for someone special.",
+      "items": [
+        {
+          "name": "Mini & handy boxes",
+          "description": "A small gesture for a sweet occasion."
+        },
+        {
+          "name": "Small, medium & large boxes",
+          "description": "Explore gift-box sizes at the shop."
+        }
+      ]
+    },
+    {
+      "id": "taiyaki",
+      "name": "Croissant taiyaki",
+      "shortName": "Taiyaki",
+      "koreanName": "크로아상 붕어빵",
+      "photo": "Taiyaki",
+      "description": "A pastry with a little personality. Explore sweet and savory fillings.",
+      "items": [
+        {
+          "name": "Red bean",
+          "description": "A classic sweet filling."
+        },
+        {
+          "name": "Custard cream",
+          "description": "A creamy little favorite."
+        },
+        {
+          "name": "Mochi",
+          "description": "Mochi and red bean filling."
+        },
+        {
+          "name": "Nutella",
+          "description": "For a chocolate-hazelnut moment."
+        },
+        {
+          "name": "Biscoff",
+          "description": "Cookie-butter sweetness."
+        },
+        {
+          "name": "Sweet potato",
+          "description": "A sweet potato filling."
+        },
+        {
+          "name": "Blueberry cream cheese",
+          "description": "Fruit and cream cheese."
+        },
+        {
+          "name": "Ham, egg & cheese",
+          "description": "A savory option."
+        },
+        {
+          "name": "Bacon, egg & cheese",
+          "description": "Something savory with your coffee."
+        }
+      ]
+    },
+    {
+      "id": "bubble-tea-smoothies",
+      "name": "Bubble tea & smoothies",
+      "shortName": "Bubble tea",
+      "koreanName": "",
+      "photo": "boba-tea",
+      "description": "Find your favorite flavor and your next little coffee-break companion.",
+      "items": [
+        {
+          "name": "Milk tea",
+          "description": "Ask about iced and blended options."
+        },
+        {
+          "name": "Taro",
+          "description": "A sweet sip for your visit."
+        },
+        {
+          "name": "Thai tea",
+          "description": "Explore the tea selection."
+        },
+        {
+          "name": "Mango smoothie",
+          "description": "A fruit-filled little break."
+        },
+        {
+          "name": "Strawberry smoothie",
+          "description": "Something fruity to sip."
+        },
+        {
+          "name": "Yogurt smoothie",
+          "description": "Ask about available fruit combinations."
+        }
+      ]
+    },
+    {
+      "id": "shaved-ice",
+      "name": "Shaved ice",
+      "shortName": "Shaved ice",
+      "koreanName": "눈꽃빙수",
+      "photo": "CocoShavedIce",
+      "description": "Slow down with something cool. Availability can vary during busy hours.",
+      "items": [
+        {
+          "name": "Original coco",
+          "description": "Explore the original shaved ice."
+        },
+        {
+          "name": "Mango",
+          "description": "A fruity shaved-ice choice."
+        },
+        {
+          "name": "Green tea",
+          "description": "For the green-tea lover."
+        },
+        {
+          "name": "Oreo",
+          "description": "Cookies in a cool little treat."
+        }
+      ]
+    },
+    {
+      "id": "coffee-drinks",
+      "name": "Coffee & more",
+      "shortName": "Coffee & more",
+      "koreanName": "",
+      "photo": "coffee",
+      "description": "Find a warm cup or a cool sip to go with your pastry.",
+      "items": [
+        {
+          "name": "Americano",
+          "description": "Hot or iced."
+        },
+        {
+          "name": "Café latte",
+          "description": "Coffee and a little pause."
+        },
+        {
+          "name": "Coco latte",
+          "description": "A latte with condensed milk."
+        },
+        {
+          "name": "Vanilla latte",
+          "description": "A touch of vanilla."
+        },
+        {
+          "name": "Green tea latte",
+          "description": "A tea-inspired cup."
+        },
+        {
+          "name": "Citrus tea",
+          "description": "Ask about hot and iced choices."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+node_modules/
+.next/
+.env*
+!.env.example
+*.tsbuildinfo
+playwright-report/
+test-results/
+.DS_Store
+.next-live/
+website/.next/
+website/node_modules/
+.local-tools/

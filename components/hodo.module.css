@@ -1,0 +1,25 @@
+.hodo { display: block; width: 200px; padding: 0; margin: 0 auto; background: transparent; border: 0; border-radius: 30%; cursor: pointer; }
+.hodo svg { display: block; width: 100%; height: auto; overflow: visible; }
+.body { transform-origin: 130px 228px; animation: breathe 4s ease-in-out infinite; }
+.eyes { transform-origin: 128px 124px; animation: blink 7s infinite; }
+.waveArm { transform-origin: 61px 153px; }
+.cupArm { transform-origin: 208px 185px; }
+.brewArm, .pour { opacity: 0; }
+.steam { opacity: 0; }
+.hodo[data-action='wave'] .waveArm { animation: wave .6s ease-in-out 6; }
+.hodo[data-action='sip'] .cupArm { animation: sip 3.6s ease-in-out; }
+.hodo[data-action='sip'] .eyes { transform: scaleY(.25); animation: none; }
+.hodo[data-action='brew'] .waveArm { opacity: 0; }
+.hodo[data-action='brew'] .brewArm { opacity: 1; }
+.hodo[data-action='brew'] .kettle { transform-origin: 65px 127px; animation: pourTilt 3.6s ease-in-out; }
+.hodo[data-action='brew'] .pour { animation: coffee 3.6s ease-in-out; stroke-dasharray: 5 6; }
+.hodo[data-action='brew'] .steam { animation: steam 3.6s ease-out; }
+@keyframes breathe { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
+@keyframes blink { 0%,43%,47%,100% { transform: scaleY(1); } 45% { transform: scaleY(.1); } }
+@keyframes wave { 0%,100% { transform: rotate(0); } 50% { transform: rotate(24deg); } }
+@keyframes sip { 0%,100% { transform: translate(0,0) rotate(0); } 25%,75% { transform: translate(-43px,-19px) rotate(-17deg); } }
+@keyframes pourTilt { 0%,100% { transform: rotate(0); } 25%,75% { transform: rotate(12deg); } }
+@keyframes coffee { 0%,20%,85%,100% { opacity: 0; } 30%,70% { opacity: 1; stroke-dashoffset: -40; } }
+@keyframes steam { 0%,30%,100% { opacity: 0; } 65% { opacity: .7; transform: translateY(-4px); } }
+@media(max-width:420px) { .hodo { width: 170px; } }
+@media(prefers-reduced-motion:reduce) { .hodo *, .hodo[data-action] * { animation: none; } }
