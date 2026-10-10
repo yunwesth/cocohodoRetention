@@ -26,12 +26,12 @@ The launcher starts both servers and stops both when interrupted. If a port is i
 
 | File | Edit here |
 | --- | --- |
-| `website/content/store.json` | Name, address, telephone, hours, ordering providers, provenance, program approval status |
-| `website/content/menu.json` | Menu items, categories, short descriptions, image choices |
-| `website/public/photos/` | Locally served reference images; replace or confirm rights before publication |
-| `website/app/globals.css` | Public-site visual styles |
-| `website/app/privacy/page.tsx` | Actual data practices and shop-approved support/privacy details |
-| `website/app/rewards/terms/page.tsx` | Final reward eligibility, value, and terms |
+| `apps/website/content/store.json` | Name, address, telephone, hours, ordering providers, provenance, program approval status |
+| `apps/website/content/menu.json` | Menu items, categories, short descriptions, image choices |
+| `apps/website/public/photos/` | Locally served reference images; replace or confirm rights before publication |
+| `apps/website/styles/` | Public-site visual styles |
+| `apps/website/app/privacy/page.tsx` | Actual data practices and shop-approved support/privacy details |
+| `apps/website/app/rewards/terms/page.tsx` | Final reward eligibility, value, and terms |
 
 Square is explicitly excluded in the store content and is filtered out by the public site's provider list. DoorDash and Uber Eats currently have enabled links. Grubhub stays disabled because automated verification hit a regional restriction. A listing verification does not prove a checkout or guarantee availability for every customer's address.
 
@@ -39,7 +39,7 @@ Do not add prices until the shop confirms them. The menu deliberately shows no p
 
 ## Environment values
 
-Copy `.env.example` to `.env.local` for rewards and `website/.env.example` to `website/.env.local` for the public site when configuring services. Do not commit real environment files. Production hosts should provide variables in their project settings.
+Run `npm run env:setup` to create `apps/rewards/.env.local`, `apps/website/.env.local`, and the root tools `.env.local` without overwriting existing values. Do not commit real environment files. Production hosts should provide variables in their project settings.
 
 | App | Variable | Production intent |
 | --- | --- | --- |
@@ -51,7 +51,7 @@ Copy `.env.example` to `.env.local` for rewards and `website/.env.example` to `w
 | Rewards | `NEXT_PUBLIC_SUPABASE_URL` | Shop's Supabase project URL |
 | Rewards | `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | Publishable/anon key, never a privileged service-role key |
 
-Enabling live website copy additionally requires `rewards.status` in `website/content/store.json` to be `owner_confirmed`. Before changing that status, update the terms page from its preview wording, finalize the privacy notice, confirm eligibility/value, and complete the live checks. This guards the public CTA; it is not an authentication or access-control mechanism. Supabase permissions enforce rewards authorization.
+Enabling live website copy additionally requires `rewards.status` in `apps/website/content/store.json` to be `owner_confirmed`. Before changing that status, update the terms page from its preview wording, finalize the privacy notice, confirm eligibility/value, and complete the live checks. This guards the public CTA; it is not an authentication or access-control mechanism. Supabase permissions enforce rewards authorization.
 
 ## Staging rewards service
 
@@ -66,18 +66,18 @@ No shop service account, credentials, SMS sender, or database has been created b
 
 ## Two deployable applications
 
-Use two projects from the same repository on a host supporting Next.js. Preserve the repository root for both builds so they share the root lockfile and the public site can import the existing walnut mark.
+Use two projects from the same repository on a host supporting Next.js. Preserve the repository root for both builds so they share the root lockfile and both apps can resolve the shared UI workspace.
 
 | Setting | Rewards project | Public website project |
 | --- | --- | --- |
 | Node | 24 | 24 |
 | Install from repo root | `npm ci` | `npm ci` |
 | Build from repo root | `npm run build` | `npm run build:website` |
-| Next build directory | `.next` | `website/.next` |
+| Next build directory | `apps/rewards/.next` | `apps/website/.next` |
 | Self-hosted start | `npm run start` | `npm run start:website` |
 | Intended domain | `app.<domain>` | `<domain>` |
 
-Host-specific framework adapters may require the public project's root directory to be `website/`. In that case use `cd .. && npm ci` as install and `npm run build` from `website/`, and allow access to source files outside that directory. Confirm adapter support with a staging build before configuring DNS. The standalone `website/package.json` declares its runtime dependencies, but the validated install is the root lockfile workflow; do not assume a separate website lockfile exists.
+For a workspace-aware hosting platform, select `apps/rewards` or `apps/website` as the respective app root. Install with the repository's root lockfile (`npm ci` from the root), run the selected workspace's `build` script, and include `packages/ui` in its source. If the platform requires an explicit install command from an app directory, use `cd ../.. && npm ci`. Both apps now depend on `@cocohodo/ui` through npm workspaces and do not import each other's files. Confirm the host's monorepo settings in staging before configuring DNS.
 
 For a provider-independent production rehearsal, set both URL variables explicitly, build, and start each app on separate ports with the scripts above. Put each behind HTTPS for physical-device camera tests. Do not set public URLs to localhost on a hosted deployment.
 
@@ -111,4 +111,4 @@ npm run test:e2e
 npm run test:flows
 ```
 
-Run browser suites sequentially because the rewards app shares generated type files. Authenticated flow tests build a separate `.next-live` app and mock Supabase at the HTTP boundary. For this session browser binaries use `PLAYWRIGHT_BROWSERS_PATH=/private/tmp/cocohodo-playwright`; use that variable for tests while using those temporary binaries. Real PostgreSQL contention and physical-device tests remain separate gates.
+Run browser suites sequentially because the rewards app shares generated type files. Authenticated flow tests build a separate `apps/rewards/.next-live` app and mock Supabase at the HTTP boundary. For this session browser binaries use `PLAYWRIGHT_BROWSERS_PATH=/private/tmp/cocohodo-playwright`; use that variable for tests while using those temporary binaries. Real PostgreSQL contention and physical-device tests remain separate gates.

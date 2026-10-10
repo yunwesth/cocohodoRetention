@@ -1,0 +1,293 @@
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 70px;
+  padding-top: 64px;
+  padding-bottom: 65px;
+  align-items: center;
+}
+
+.hero-copy {
+  padding: 22px 0;
+}
+
+.hero .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 25px;
+  font-size: 9px;
+}
+
+.little-dot {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background: #a2824d;
+}
+
+.hero h1 {
+  line-height: 1.06;
+  font-size: clamp(55px,6vw,83px);
+  letter-spacing: -3.8px;
+}
+
+.hero-copy>p {
+  max-width: 365px;
+  line-height: 1.9;
+  margin: 25px 0 30px;
+  font-size: 14px;
+}
+
+.hero-location {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 42px;
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.hero-art {
+  position: relative;
+  padding-bottom: 21px;
+}
+
+.food-photo {
+  position: relative;
+  overflow: hidden;
+  background: #e9dfd1;
+}
+
+.food-photo img {
+  object-fit: cover;
+  transition: transform .6s ease;
+}
+
+.hero-art .food-photo {
+  height: 535px;
+  border-radius: 48% 48% 3px 3px;
+}
+
+.hero-art img {
+  object-position: 50% 50%;
+}
+
+.hero-sticker {
+  position: absolute;
+  bottom: 64px;
+  left: -38px;
+  width: 111px;
+  height: 111px;
+  border: 1px solid #b69c7a;
+  outline: 6px solid var(--paper);
+  border-radius: 50%;
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transform: rotate(-12deg);
+}
+
+.hero-sticker svg {
+  width: 34px;
+  height: 34px;
+  color: #8d683f;
+}
+
+.hero-sticker span {
+  font-size: 8px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.6;
+  letter-spacing: 1.3px;
+}
+
+.photo-caption {
+  position: absolute;
+  bottom: -3px;
+  right: 0;
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #8a7561;
+}
+
+.ribbon {
+  border-block: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 49px;
+  padding: 21px 28px;
+  background: #f0e8dd;
+  overflow: hidden;
+}
+
+.ribbon span {
+  font-size: 9px;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.ribbon svg {
+  width: 20px;
+  height: 22px;
+  color: #9f8060;
+}
+
+.section {
+  padding-block: 81px 90px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 35px;
+  gap: 30px;
+}
+
+.section-heading .eyebrow {
+  margin-bottom: 14px;
+}
+
+.section-heading h2 {
+  font-size: 44px;
+}
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 23px;
+}
+
+.favorite .food-photo {
+  aspect-ratio: 1/1.12;
+  border-radius: 4px;
+}
+
+.favorite:hover img {
+  transform: scale(1.045);
+}
+
+.favorite-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 19px 0 5px;
+  gap: 10px;
+}
+
+.favorite-title h3 {
+  font-size: 17px;
+  letter-spacing: -.3px;
+}
+
+.korean {
+  font-size: 10px;
+  color: #796d61;
+}
+
+.favorite>p {
+  font-size: 11px;
+  margin-top: 7px;
+}
+
+.story-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+  padding-bottom: 95px;
+}
+
+.story-section>.food-photo {
+  height: 440px;
+  border-radius: 4px 90px 4px 4px;
+}
+
+.story-copy .eyebrow {
+  margin-bottom: 17px;
+}
+
+.story-copy h2 {
+  margin-bottom: 23px;
+}
+
+.story-copy p {
+  font-size: 14px;
+  margin-bottom: 17px;
+  max-width: 410px;
+}
+
+.story-copy .text-link {
+  margin-top: 8px;
+}
+
+.visit-section {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  padding-block: 90px;
+  gap: 90px;
+  align-items: center;
+}
+
+.visit-details h2 {
+  margin: 16px 0 24px;
+}
+
+.visit-details address {
+  font-style: normal;
+  font-size: 14px;
+  margin-bottom: 19px;
+}
+
+.hours {
+  margin-bottom: 25px;
+  font-size: 13px;
+}
+
+.visit-details>.fine {
+  margin-top: 17px;
+}
+
+.visit-art {
+  background: #ebe0cf;
+  height: 360px;
+  border-radius: 50% 50% 4px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #7f6040;
+  text-align: center;
+  padding: 40px;
+}
+
+.visit-art>span {
+  font-family: var(--serif);
+  font-size: 35px;
+  line-height: 1.25;
+  margin-top: 22px;
+}
+
+.visit-art-bottom {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: 11px;
+  margin-top: 30px;
+}
+
+.visit-art-bottom svg {
+  height: 37px;
+  width: 37px;
+}
+
+.visit-art-bottom p {
+  font-size: 10px;
+  color: #7b654e;
+  line-height: 1.6;
+}

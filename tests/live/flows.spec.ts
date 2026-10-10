@@ -1,5 +1,5 @@
 import { expect, test, type Page } from '@playwright/test';
-import type { MemberCard } from '../../lib/loyalty';
+import type { MemberCard } from '../../apps/rewards/lib/loyalty';
 
 const code = 'ABCDEF0123456789ABCDEF0123456789';
 const user = { id: 'a7f60dab-fc32-4147-a39e-43e3e969f830', aud: 'authenticated', role: 'authenticated', phone: '12015550123', email: 'shop@example.com', app_metadata: { provider: 'phone', providers: ['phone'] }, user_metadata: {}, created_at: '2026-01-01T00:00:00Z' };

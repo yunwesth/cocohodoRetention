@@ -123,7 +123,7 @@ Rewards app — app.njcocohodo.com
   SMS provider configured through Supabase
 ```
 
-- Keep the current project as the rewards deployment. Start the public site as a separate package under `website/` with its own build configuration. Confirm root lint, TypeScript, and build discovery exclude the nested site's generated output and dependencies before adding it.
+- Use npm workspaces: `apps/rewards` for rewards, `apps/website` for the public site, and `packages/ui` for shared artwork. Each app owns its build and configuration; install through the root lockfile.
 - Use a separately deployable Next.js public site with static content for the initial menu and store details. A CMS is unnecessary for this MVP; document where an operator can request or make content changes.
 - Use one configuration value for the public site's rewards destination and another for the app's return-to-site destination. Local development can use website port 3001 and rewards port 3000; staging uses explicit HTTPS origins.
 - Proposed hosting: two projects on a Next.js-compatible host such as Vercel. This preserves the current app stack and allows independent releases. Custom root domains and subdomains are supported in [Vercel's domain setup documentation](https://vercel.com/docs/domains/working-with-domains/add-a-domain). Hosting account, commercial plan suitability, and costs are decisions for POC 6.
@@ -296,7 +296,7 @@ The latest user direction authorizes proceeding through every POC. Implement ava
 
 | POC | Date | Evidence / preview | Pass or revise | Open items |
 | --- | --- | --- | --- | --- |
-| 1 | October 9, 2026 | [Review sheet](docs/poc-1/REVIEW.md), [store content](website/content/store.json), [asset inventory](docs/poc-1/ASSET_INVENTORY.md) | Deliverables complete; ready for review | Prices, availability, holiday hours, photo rights, reward eligibility |
+| 1 | October 9, 2026 | [Review sheet](docs/poc-1/REVIEW.md), [store content](apps/website/content/store.json), [asset inventory](docs/poc-1/ASSET_INVENTORY.md) | Deliverables complete; ready for review | Prices, availability, holiday hours, photo rights, reward eligibility |
 | 2 | October 9, 2026 | [Website](http://localhost:3001), [screenshots](docs/preview/desktop.png) | Implemented; viewport/browser checks passed | Owner visual review |
 | 3 | October 9, 2026 | [Menu](http://localhost:3001/menu/), [ordering](http://localhost:3001/order/) | Implemented; two provider listings verified | Final availability, Grubhub, actual phone directions |
 | 4 | October 9, 2026 | Website → app → QR → website browser tests | Passed on four profiles | Actual hosted origins |

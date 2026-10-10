@@ -1,14 +1,22 @@
 import { spawn } from 'node:child_process';
 import { createRequire } from 'node:module';
+import { fileURLToPath } from 'node:url';
 const require = createRequire(import.meta.url);
 const next = require.resolve('next/dist/bin/next');
+const root = new URL('../', import.meta.url);
 if (Number(process.versions.node.split('.')[0]) !== 24) {
   console.error('Use Node 24 (nvm use), then run npm run dev:all.');
   process.exit(1);
 }
 const children = [
-  spawn(process.execPath, [next, 'dev', '--webpack', '--hostname', '127.0.0.1', '--port', '3000'], { stdio: 'inherit', env: { ...process.env, NEXT_PUBLIC_WEBSITE_URL: process.env.NEXT_PUBLIC_WEBSITE_URL || 'http://localhost:3001' } }),
-  spawn(process.execPath, [next, 'dev', 'website', '--webpack', '--hostname', '127.0.0.1', '--port', '3001'], { stdio: 'inherit', env: { ...process.env, NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3001', NEXT_PUBLIC_REWARDS_URL: process.env.NEXT_PUBLIC_REWARDS_URL || 'http://localhost:3000' } }),
+  ...[['rewards', '3000'], ['website', '3001']].map(([app, port]) =>
+    spawn(process.execPath, [next, 'dev', '--webpack', '--hostname', '127.0.0.1', '--port', port], {
+      cwd: fileURLToPath(new URL(`apps/${app}/`, root)),
+      stdio: 'inherit',
+      // Next loads each app's own .env files; do not override them with defaults.
+      env: { ...process.env },
+    }),
+  ),
 ];
 let closing = false;
 function stop(code = 0) {

@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 1,
+  "lastReviewed": "2026-10-09",
+  "publicationStatus": "draft",
+  "statusLegend": {
+    "source_backed": "Published by the cited source; not separately owner-confirmed",
+    "draft": "Proposed editorial content",
+    "needs_confirmation": "Unresolved; do not publish as a verified claim",
+    "user_confirmed": "Explicit user direction"
+  },
+  "sources": {
+    "contact": {
+      "url": "https://njcocohodo.com/contact/",
+      "checkedAt": "2026-10-09"
+    },
+    "home": {
+      "url": "https://njcocohodo.com/",
+      "checkedAt": "2026-10-09"
+    },
+    "menu": {
+      "url": "https://njcocohodo.com/menu/",
+      "checkedAt": "2026-10-09"
+    },
+    "rewards": {
+      "path": "apps/rewards/README.md",
+      "supportingPaths": [
+        "apps/rewards/features/rewards/rewards.tsx",
+        "apps/rewards/lib/loyalty.ts",
+        "LAUNCH_CHECKLIST.md"
+      ]
+    },
+    "direction": {
+      "reference": "User instruction, October 9, 2026: do not use Square ordering links"
+    }
+  },
+  "store": {
+    "name": {
+      "value": "Cocohodo Closter",
+      "status": "source_backed",
+      "source": "contact"
+    },
+    "address": {
+      "value": {
+        "street": "255 Closter Dock Road",
+        "city": "Closter",
+        "region": "NJ",
+        "postalCode": "07624",
+        "country": "US"
+      },
+      "status": "source_backed",
+      "source": "contact"
+    },
+    "phone": {
+      "value": "(201) 767-2626",
+      "href": "tel:+12017672626",
+      "status": "source_backed",
+      "source": "contact"
+    },
+    "hours": {
+      "value": {
+        "timezone": "America/New_York",
+        "daysOpen": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00",
+        "daysClosed": [
+          "Sunday"
+        ]
+      },
+      "status": "source_backed",
+      "source": "contact"
+    },
+    "holidayHours": {
+      "value": null,
+      "status": "needs_confirmation",
+      "source": "contact",
+      "note": "No verified exceptions found."
+    },
+    "directions": {
+      "href": "https://www.google.com/maps/dir/?api=1&destination=255%20Closter%20Dock%20Road%2C%20Closter%2C%20NJ%2007624",
+      "status": "needs_confirmation",
+      "source": "contact",
+      "note": "Generated from the published address; verify the destination on a phone in POC 3."
+    },
+    "email": {
+      "value": null,
+      "status": "needs_confirmation",
+      "source": null
+    },
+    "socialProfiles": {
+      "value": [],
+      "status": "needs_confirmation",
+      "source": null
+    },
+    "parking": {
+      "value": null,
+      "status": "needs_confirmation",
+      "source": null
+    }
+  },
+  "ordering": {
+    "excludedProviderIds": [
+      "square"
+    ],
+    "exclusionStatus": "user_confirmed",
+    "exclusionSource": "direction",
+    "primaryProviderId": null,
+    "primaryProviderStatus": "needs_confirmation",
+    "providers": [
+      {
+        "id": "doordash",
+        "label": "DoorDash",
+        "href": "https://www.doordash.com/store/cocohodo-closter-623514/",
+        "source": "home",
+        "status": "source_backed",
+        "availabilityStatus": "listing_verified",
+        "enabledForProduction": true,
+        "verificationNote": "Closter listing resolved via web research on October 9, 2026; checkout not exercised."
+      },
+      {
+        "id": "grubhub",
+        "label": "Grubhub",
+        "href": "https://www.grubhub.com/restaurant/cocohodo-255-closter-dock-rd-closter/2525321",
+        "source": "home",
+        "status": "source_backed",
+        "availabilityStatus": "region_blocked",
+        "enabledForProduction": false,
+        "verificationNote": "Regional restriction prevented independent verification; omit from active ordering links."
+      },
+      {
+        "id": "ubereats",
+        "label": "Uber Eats",
+        "href": "https://www.ubereats.com/store/cocohodo-closter/PJsu-e91RoWihoPZwbhiXw",
+        "source": "home",
+        "status": "source_backed",
+        "availabilityStatus": "listing_verified",
+        "enabledForProduction": true,
+        "verificationNote": "Closter listing resolved via web research on October 9, 2026; checkout not exercised."
+      }
+    ],
+    "note": "DoorDash and Uber Eats listings verified. No paid order placed. Grubhub withheld pending a local check. Square excluded by user."
+  },
+  "menu": {
+    "source": "menu",
+    "status": "source_backed",
+    "showPrices": false,
+    "priceStatus": "needs_confirmation",
+    "availabilityStatus": "needs_confirmation",
+    "categories": [
+      {
+        "id": "walnut-pastries",
+        "name": "Walnut pastries",
+        "koreanName": "호도과자",
+        "description": "Explore our signature walnut pastries.",
+        "descriptionStatus": "draft",
+        "price": null
+      },
+      {
+        "id": "gift-boxes",
+        "name": "Gift boxes",
+        "description": "Walnut pastries packaged for gifting.",
+        "descriptionStatus": "draft",
+        "price": null
+      },
+      {
+        "id": "taiyaki",
+        "name": "Croissant taiyaki",
+        "koreanName": "크로아상 붕어빵",
+        "description": "Explore sweet and savory fillings.",
+        "descriptionStatus": "draft",
+        "price": null
+      },
+      {
+        "id": "bubble-tea-smoothies",
+        "name": "Bubble tea & smoothies",
+        "description": "Explore teas and fruit drinks.",
+        "descriptionStatus": "draft",
+        "price": null
+      },
+      {
+        "id": "shaved-ice",
+        "name": "Shaved ice",
+        "koreanName": "눈꽃빙수",
+        "description": "A cool treat to share.",
+        "descriptionStatus": "draft",
+        "price": null
+      },
+      {
+        "id": "coffee-drinks",
+        "name": "Coffee & hot or iced drinks",
+        "description": "Find something to sip with your pastry.",
+        "descriptionStatus": "draft",
+        "price": null
+      }
+    ],
+    "allergenClaims": {
+      "value": null,
+      "status": "needs_confirmation",
+      "note": "Do not infer dietary suitability or allergen safety from category names."
+    }
+  },
+  "copy": {
+    "status": "draft",
+    "sources": [
+      "home",
+      "menu",
+      "contact"
+    ],
+    "hero": {
+      "eyebrow": "COCOHODO · CLOSTER, NJ",
+      "heading": "Korean pastries, sweet treats, and coffee in Closter.",
+      "body": "Explore walnut pastries, croissant taiyaki, bubble tea, and more. Find a favorite for your next visit.",
+      "primaryAction": {
+        "label": "Explore the menu",
+        "href": "/menu/"
+      },
+      "secondaryAction": {
+        "label": "Order online",
+        "href": "/order/"
+      }
+    },
+    "introduction": {
+      "heading": "A little something for every visit.",
+      "body": "Stop by for a pastry and a drink, or explore walnut pastry gift boxes for someone special."
+    },
+    "visit": {
+      "heading": "Come see us in Closter.",
+      "body": "Find our hours, call the shop, or get directions.",
+      "href": "/contact/"
+    },
+    "rewardsPreview": {
+      "heading": "A little thank-you for coming back.",
+      "body": "Preview our digital rewards card and see how collecting stamps works.",
+      "actionLabel": "Explore rewards",
+      "href": "/rewards/",
+      "showLiveJoin": false
+    },
+    "order": {
+      "heading": "Choose how to order.",
+      "body": "Explore the available ordering providers for Cocohodo Closter."
+    }
+  },
+  "rewards": {
+    "source": "rewards",
+    "status": "needs_confirmation",
+    "mode": "preview",
+    "implementedRules": {
+      "stampsPerEligiblePaidDrink": 1,
+      "stampsForReward": 10,
+      "preserveOverflow": true,
+      "redeemFullCardBeforeMoreAwards": true,
+      "stampsExpire": false,
+      "automaticExternalOrderRewards": false
+    },
+    "unresolved": [
+      "Eligible drinks and exclusions",
+      "Free drink size and maximum value",
+      "Pickup and delivery purchase eligibility",
+      "Owner acceptance of the implemented program rules"
+    ],
+    "proposedOrigin": "https://app.njcocohodo.com",
+    "originStatus": "needs_confirmation",
+    "paths": {
+      "dashboard": "/",
+      "login": "/login",
+      "qr": "/qr",
+      "staffLogin": "/cashier/login"
+    }
+  },
+  "brand": {
+    "sourcePaths": [
+      "apps/rewards/app/globals.css",
+      "packages/ui/src/brand-mark.tsx",
+      "apps/rewards/features/mascot/hodo.tsx"
+    ],
+    "status": "draft",
+    "colors": {
+      "paper": "#f8f5f2",
+      "ink": "#2c251f",
+      "muted": "#85877f",
+      "line": "#e8e2dd",
+      "sand": "#f2e6da",
+      "accent": "#e9d5c2"
+    },
+    "typography": {
+      "body": "Arial, Helvetica, sans-serif",
+      "editorialHeading": "Georgia, serif"
+    },
+    "note": "Existing app tokens. Check text contrast during POC 2; muted is not automatically suitable for small text."
+  }
+}

@@ -1,12 +1,23 @@
+# Local credentials and environment values at any app/package depth.
+.env*
+*.env
+*.env.*
+# Commit only blank, documented templates; never real values in these files.
+!.env.example
+
+# Dependencies and generated output for every workspace.
 node_modules/
 .next/
-.env*
-!.env.example
+.next-live/
+next-env.d.ts
 *.tsbuildinfo
 playwright-report/
 test-results/
-.DS_Store
-.next-live/
-website/.next/
-website/node_modules/
 .local-tools/
+.DS_Store
+
+# Local credential files must not enter source control.
+.aws/
+.credentials/
+*.pem
+*.key

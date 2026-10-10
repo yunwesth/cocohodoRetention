@@ -18,7 +18,7 @@ Prepared October 9, 2026. POC 1 deliverables are complete and ready for review. 
 | Phone | (201) 767-2626 | Official site |
 | Hours | Monday–Saturday, 9 AM–6 PM; Sunday closed | Official site; holiday hours unresolved |
 
-Source: [official contact page](https://njcocohodo.com/contact/), checked October 9, 2026. These values live together in [store.json](../../website/content/store.json), which all proposed pages should consume. The public pages do not exist yet, so consistency here means one content source has been established; rendered-page checks belong to POC 2.
+Source: [official contact page](https://njcocohodo.com/contact/), checked October 9, 2026. These values live together in [store.json](../../apps/website/content/store.json), which all proposed pages should consume. The public pages do not exist yet, so consistency here means one content source has been established; rendered-page checks belong to POC 2.
 
 ## Proposed homepage copy
 
@@ -73,4 +73,4 @@ Checks: parsed the JSON, checked required source references and local asset path
 
 ## Subsequent implementation
 
-The user authorized all remaining POCs on October 9, 2026. This sheet remains the historical POC 1 review. The [MVP status](../../MVP_STATUS.md) and [photo sources](../../website/public/photos/SOURCES.md) describe the implemented website, updated provider checks, and remaining launch requirements.
+The user authorized all remaining POCs on October 9, 2026. This sheet remains the historical POC 1 review. The [MVP status](../../MVP_STATUS.md) and [photo sources](../../apps/website/public/photos/SOURCES.md) describe the implemented website, updated provider checks, and remaining launch requirements.

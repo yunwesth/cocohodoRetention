@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { friendlyError, normalizeMemberCode, normalizePhone, readableCode } from '../lib/loyalty';
+import { friendlyError, normalizeMemberCode, normalizePhone, readableCode } from '../apps/rewards/lib/loyalty';
 
 describe('phone sign-in input', () => {
   it.each(['2015550123', '(201) 555-0123', '+1 201 555 0123'])('normalizes %s', (phone) => {

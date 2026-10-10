@@ -1,0 +1,12 @@
+{
+  "name": "@cocohodo/ui",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./brand-mark": "./src/brand-mark.tsx"
+  },
+  "peerDependencies": {
+    "react": "^19.3.0"
+  }
+}

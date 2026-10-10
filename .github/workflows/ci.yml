@@ -1,21 +1,13 @@
 name: Validate COCOHODO
 on: [push, pull_request]
+permissions:
+  contents: read
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   validate:
     runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: postgres:17
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: cocohodo_test
-        ports: ['5432:5432']
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 5s
-          --health-timeout 5s
-          --health-retries 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -23,16 +15,33 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
+      - name: Start disposable test database
+        shell: bash
+        run: |
+          test_db_password="$(openssl rand -hex 24)"
+          echo "::add-mask::$test_db_password"
+          export POSTGRES_PASSWORD="$test_db_password"
+          docker run -d --name cocohodo-test-db -p 127.0.0.1:5432:5432 --env POSTGRES_PASSWORD --env POSTGRES_DB=cocohodo_test postgres:17
+          umask 077
+          printf 'TEST_DATABASE_URL=postgresql://postgres:%s@127.0.0.1:5432/cocohodo_test\n' "$test_db_password" > .env.local
+          for attempt in {1..30}; do
+            if docker exec cocohodo-test-db pg_isready -h 127.0.0.1 -U postgres -d cocohodo_test; then exit 0; fi
+            sleep 2
+          done
+          exit 1
       - run: npm run lint
       - run: npm run typecheck
       - run: npm test
       - run: npm run test:db
-        env:
-          TEST_DATABASE_URL: postgres://postgres:postgres@localhost:5432/cocohodo_test
       - run: npm run build
+      - run: npm run build:website
       - run: npx playwright install --with-deps chromium webkit
       - run: npm run test:e2e
+      - run: npm run test:website
       - run: npm run test:flows
+      - name: Stop disposable test database
+        if: always()
+        run: docker rm -f cocohodo-test-db || true
       - uses: actions/upload-artifact@v4
         if: failure()
         with:

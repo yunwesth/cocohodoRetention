@@ -8,12 +8,12 @@ Paths below are relative to the repository root.
 
 | Asset / source | Intended use | Reuse status |
 | --- | --- | --- |
-| `components/brand.tsx` | Walnut outline mark beside the Cocohodo name | Existing app artwork; prototype reuse proposed; official logo approval unresolved |
-| `components/hodo.tsx` and `components/hodo.module.css` | Animated walnut mascot in the rewards introduction | Existing inline SVG; use sparingly; retain reduced-motion behavior; provenance/brand approval unconfirmed |
-| `public/hodo-mascot.png` | Optional raster mascot candidate | Existing file; not the SVG used by the current Hodo component; inspect before selection; provenance unconfirmed |
-| `public/coffee-art.svg` | Optional decorative coffee illustration | Existing file; inspect before selection; not a real product photo; provenance unconfirmed |
-| `public/icon.svg` | Existing app icon | Source shows a C-style mark, distinct from the walnut header; reconcile identity in POC 2 |
-| `public/apple-icon.png`, `public/icon-192.png`, `public/icon-512.png`, `public/icon-maskable.png` | Existing home-screen icons | Existing assets; inspect visual consistency before reuse on the public site |
+| `packages/ui/src/brand-mark.tsx` | Walnut outline mark beside the Cocohodo name | Existing app artwork; prototype reuse proposed; official logo approval unresolved |
+| `apps/rewards/features/mascot/hodo.tsx` and `apps/rewards/features/mascot/hodo.module.css` | Animated walnut mascot in the rewards introduction | Existing inline SVG; use sparingly; retain reduced-motion behavior; provenance/brand approval unconfirmed |
+| `apps/rewards/public/hodo-mascot.png` | Optional raster mascot candidate | Existing file; not the SVG used by the current Hodo component; inspect before selection; provenance unconfirmed |
+| `apps/rewards/public/coffee-art.svg` | Optional decorative coffee illustration | Existing file; inspect before selection; not a real product photo; provenance unconfirmed |
+| `apps/rewards/public/icon.svg` | Existing app icon | Source shows a C-style mark, distinct from the walnut header; reconcile identity in POC 2 |
+| `apps/rewards/public/apple-icon.png`, `apps/rewards/public/icon-192.png`, `apps/rewards/public/icon-512.png`, `apps/rewards/public/icon-maskable.png` | Existing home-screen icons | Existing assets; inspect visual consistency before reuse on the public site |
 
 ## Photograph brief
 
@@ -44,4 +44,4 @@ Use warm, simple copy and generous space around food imagery. The mascot support
 
 ## Full MVP update — October 9, 2026
 
-The local prototype now uses seven photographs from the reference website. Their exact URLs and publication-rights status are recorded in [photo sources](../../website/public/photos/SOURCES.md). They replace the proposed placeholders for food imagery. No storefront photograph is used. The public favicon reuses the existing walnut mark to align it with the header; rewards icons remain unchanged.
+The local prototype now uses seven photographs from the reference website. Their exact URLs and publication-rights status are recorded in [photo sources](../../apps/website/public/photos/SOURCES.md). They replace the proposed placeholders for food imagery. No storefront photograph is used. The public favicon reuses the existing walnut mark to align it with the header; rewards icons remain unchanged.

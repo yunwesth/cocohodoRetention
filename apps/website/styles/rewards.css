@@ -1,0 +1,121 @@
+.rewards-band {
+  background: #51412f;
+  color: #f9f0e1;
+  padding: 76px 0;
+}
+
+.rewards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 95px;
+  align-items: center;
+}
+
+.rewards-band .eyebrow {
+  color: #d1bc9e;
+  margin-bottom: 16px;
+}
+
+.rewards-band h2 {
+  font-size: 46px;
+  letter-spacing: -1.5px;
+}
+
+.rewards-band em {
+  color: #dcc2a1;
+}
+
+.rewards-band p {
+  color: #e0d3bf;
+  font-size: 13px;
+  max-width: 355px;
+  margin: 23px 0;
+}
+
+.subnote {
+  display: block;
+  font-size: 10px;
+  color: #d0c1aa;
+  margin-top: 15px;
+}
+
+.sample-card {
+  background: #faf4e9;
+  color: var(--brown);
+  border-radius: 12px;
+  padding: 28px 30px;
+  box-shadow: 0 20px 50px #201a1d22;
+  transform: rotate(3deg);
+  max-width: 475px;
+  width: 100%;
+  border: 1px solid #e3d6c2;
+}
+
+.card-brand {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.card-brand>svg {
+  width: 22px;
+  height: 22px;
+}
+
+.card-brand>span:nth-child(2) {
+  font-family: var(--serif);
+  font-size: 21px;
+  letter-spacing: -1px;
+}
+
+.sample-label {
+  font-size: 7px;
+  letter-spacing: 1.5px;
+  margin-left: auto;
+}
+
+.sample-card>p {
+  font-family: var(--serif);
+  font-size: 29px;
+  line-height: 1.15;
+  margin: 24px 0 !important;
+  color: var(--brown) !important;
+}
+
+.sample-stamps {
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  gap: 12px;
+  margin: 20px 0 24px;
+}
+
+.sample-stamps>span {
+  border: 1px dashed #c6b49a;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  color: #9b7e5b;
+  max-width: 60px;
+}
+
+.sample-stamps .filled {
+  background: #e6d6bd;
+  border: 1px solid #e6d6bd;
+}
+
+.sample-stamps svg {
+  width: 32px;
+  height: 32px;
+}
+
+.card-caption {
+  border-top: 1px solid #e4d6c0;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 17px;
+  gap: 15px;
+  font-size: 8px;
+}

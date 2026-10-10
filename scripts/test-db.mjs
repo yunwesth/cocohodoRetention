@@ -3,6 +3,11 @@ import { readFile } from 'node:fs/promises';
 import { randomUUID } from 'node:crypto';
 import { PGlite } from '@electric-sql/pglite';
 
+// Tool-only database credentials load from the ignored root environment file.
+// Existing CI/shell variables take precedence. Never read app production envs.
+try { process.loadEnvFile(new URL('../.env.local', import.meta.url)); }
+catch (error) { if (error.code !== 'ENOENT') throw error; }
+
 // Optional real PostgreSQL target MUST be an empty, disposable test database.
 const usePostgres = Boolean(process.env.TEST_DATABASE_URL);
 let db;

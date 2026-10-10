@@ -1,0 +1,26 @@
+{
+  "name": "@cocohodo/rewards",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --webpack --hostname 127.0.0.1 --port 3000",
+    "build": "next build --webpack",
+    "start": "next start --hostname 127.0.0.1",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.117.2",
+    "@zxing/browser": "^0.2.1",
+    "lucide-react": "^1.48.0",
+    "next": "^16.3.6",
+    "qrcode.react": "^4.2.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "@cocohodo/ui": "*"
+  },
+  "engines": {
+    "node": ">=24 <25"
+  }
+}

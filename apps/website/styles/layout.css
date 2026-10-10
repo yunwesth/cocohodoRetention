@@ -1,0 +1,123 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #f8f5f2f5;
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  width: min(1340px,calc(100% - 80px));
+  margin: auto;
+  min-height: 93px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.wordmark>svg {
+  width: 45px;
+  height: 45px;
+  color: #806043;
+}
+
+.wordmark>span {
+  font-size: 31px;
+  font-family: var(--serif);
+  letter-spacing: -1.8px;
+  line-height: 1;
+}
+
+.wordmark small {
+  display: block;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 7px;
+  letter-spacing: 2.2px;
+  font-weight: 600;
+  margin-top: 9px;
+}
+
+.site-nav {
+  display: flex;
+  gap: 39px;
+  align-items: center;
+  font-size: 12px;
+}
+
+.site-nav>a:not(.button) {
+  padding-block: 13px;
+}
+
+.site-nav a[aria-current=page] {
+  text-decoration: underline;
+  text-underline-offset: 7px;
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  padding: 10px;
+}
+
+.site-footer {
+  background: #eee7dc;
+  border-top: 1px solid var(--line);
+  padding: 54px 0 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr .65fr;
+  gap: 45px;
+  padding-bottom: 44px;
+}
+
+.footer-grid p {
+  font-size: 12px;
+  margin-top: 18px;
+}
+
+.footer-grid h2 {
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 11px;
+  letter-spacing: .3px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.footer-grid>div>a:not(.wordmark) {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  margin-block: 8px;
+  min-height: 24px;
+}
+
+.footer-grid a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #d9cfbf;
+  display: flex;
+  justify-content: space-between;
+  padding-block: 20px;
+  font-size: 9px;
+  color: #76634f;
+  gap: 24px;
+}
+
+.footer-bottom>div {
+  display: flex;
+  gap: 24px;
+}

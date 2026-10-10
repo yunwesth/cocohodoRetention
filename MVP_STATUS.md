@@ -1,6 +1,6 @@
 # Closter Cocohodo MVP — implementation and handoff
 
-Updated October 9, 2026.
+Updated October 10, 2026.
 
 **The website MVP is built and available locally.** The public website and existing rewards app run separately and link to each other. The actual `app` subdomain, live SMS service, and shop pilot are not activated.
 
@@ -44,6 +44,10 @@ The user authorized continuing through all POCs; there are no artificial per-POC
 
 ## Verification performed
 
+The October 10 workspace refactor separates `apps/rewards`, `apps/website`, and `packages/ui`, with feature modules and individual READMEs. Environment templates, a non-overwriting setup script, ignored local environment files, and browser-key validation are in place. The Git index contains no real environment or private-key files. See [architecture](docs/ARCHITECTURE.md), [environment setup](docs/ENVIRONMENT.md), and [GitHub setup](docs/GITHUB.md).
+
+The GitHub Actions workflow now validates both workspaces and uses a generated temporary database password. Its YAML and shell syntax were checked locally; the updated workflow has not run on GitHub. These changes have not been committed or pushed.
+
 All commands used Node 24.21.0. Browser tests used downloaded Chromium and WebKit binaries.
 
 | Check | Result |
@@ -53,14 +57,14 @@ All commands used Node 24.21.0. Browser tests used downloaded Chromium and WebKi
 | Website TypeScript | Passed |
 | Rewards production build | Passed |
 | Website production build | Passed |
-| Unit tests | 17 passed |
+| Unit and environment tests | 30 passed |
 | Embedded database scenarios | 26 passed using PGlite; transactions serialized by the engine |
 | Public website/integration browser checks | 20 passed across 1440px desktop, 768px tablet, 360px mobile Chrome, and iPhone WebKit profiles |
 | Existing rewards preview checks | 12 passed |
 | Authenticated rewards flow checks | 13 passed; 1 synthetic-camera check intentionally skipped on WebKit |
 | Visual inspection | Desktop and mobile homepage screenshots inspected; capture found no browser runtime errors |
 
-The 20 website checks passed across the initial run and a targeted rerun of two mobile navigation tests after correcting their changing Open/Close button locator. An older auth test's heading assertion was updated to match the existing “Enter your code” screen. No application authentication behavior was weakened to make tests pass.
+All 20 website checks passed together after the workspace refactor. An older auth test's heading assertion was updated to match the existing “Enter your code” screen. No application authentication behavior was weakened to make tests pass.
 
 The authenticated suite uses mocked Supabase HTTP responses, and PGlite is an embedded test database. These results do not prove real SMS delivery, live hosted authorization setup, physical camera permissions, or production database concurrency.
 
@@ -69,8 +73,8 @@ The authenticated suite uses mocked Supabase HTTP responses, and PGlite is an em
 - [Desktop screenshot](docs/preview/desktop.png) / [full homepage](docs/preview/desktop-full.png)
 - [Mobile screenshot](docs/preview/mobile.png) / [full homepage](docs/preview/mobile-full.png)
 - [Original POC plan with updated progress](CLOSTER_WEBSITE_POC_PLAN.md)
-- [Store content](website/content/store.json) and [menu content](website/content/menu.json)
-- [Reference photo sources and reuse status](website/public/photos/SOURCES.md)
+- [Store content](apps/website/content/store.json) and [menu content](apps/website/content/menu.json)
+- [Reference photo sources and reuse status](apps/website/public/photos/SOURCES.md)
 - [Run and release guide](docs/launch/RUNBOOK.md)
 - [Staff counter guide](docs/launch/STAFF_GUIDE.md)
 - [Pilot worksheet](docs/launch/PILOT.md)
